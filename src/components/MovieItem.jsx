@@ -18,6 +18,7 @@ function MovieItem({title, category, id, rate, cover, cast, realease}) {
             size={30}
             color2={"#ffd700"}
             edit={false}
+           
           />
         </ListGroup.Item>
         <ListGroup.Item>Category : {category} </ListGroup.Item>{" "}

@@ -10,7 +10,7 @@ import {
 
 function NavBar({ setSearch, setRating, rating }) {
   const ratingChanged = (newRating) => {
-    console.log(newRating);
+   setRating(newRating);
   };
   return (
     <Navbar bg="light" expand="lg">
