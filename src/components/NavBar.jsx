@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactStars from "react-stars";
+import { NavLink } from "react-router-dom"
 import {
   Button,
   Container,
@@ -15,7 +16,32 @@ function NavBar({ setSearch, setRating, rating }) {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand>
+          <NavLink
+            style={({ isActive }) =>
+              isActive
+                ? { color: "red" }
+                : { color: "black", textDecoration: "unset" }
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+        </Navbar.Brand>
+
+        <Navbar.Brand>
+          <NavLink
+            style={({ isActive }) =>
+              isActive
+                ? { color: "red" }
+                : { color: "black", textDecoration: "unset" }
+            }
+            to="/movies"
+          >
+            Movies
+          </NavLink>
+        </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -23,7 +49,7 @@ function NavBar({ setSearch, setRating, rating }) {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="#action1">
+            <Nav.Link href="">
               <ReactStars
                 count={10}
                 value={rating}
@@ -31,9 +57,6 @@ function NavBar({ setSearch, setRating, rating }) {
                 size={30}
                 color2={"#ffd700"}
                 half={false}
-
-
-
               />
             </Nav.Link>
           </Nav>
